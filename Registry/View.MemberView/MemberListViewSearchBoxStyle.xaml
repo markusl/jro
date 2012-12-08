@@ -1,0 +1,28 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Registry.View.MemberView">
+    <local:NullOrEmptyConverter x:Key="nullOrEmptyConverter" />
+    <local:VisibilityConverter x:Key="visibilityConverter" />
+    <local:NegativeVisibilityConverter x:Key="negativeVisibilityConverter" />
+	<VisualBrush x:Key="HelpBrush" TileMode="None" Opacity="1" Stretch="None" AlignmentX="Left">
+		<VisualBrush.Visual>
+			<TextBlock FontStyle="Italic" Text="Etsi listalta"/>
+		</VisualBrush.Visual>
+	</VisualBrush>
+	<Style TargetType="TextBox" x:Key="SearchTextBoxStyle">
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="VerticalAlignment" Value="Bottom" />
+        <Style.Triggers>
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+            </Trigger>
+            <Trigger Property="Text" Value="">
+                <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+            </Trigger>
+            <DataTrigger Binding="{Binding Path=FilterString, Converter={StaticResource nullOrEmptyConverter}}" Value="false">
+                <Setter Property="Background" Value="{StaticResource TextBoxFocusedBrush}"/>
+            </DataTrigger>
+        </Style.Triggers>
+	</Style>
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+  xmlns:local="clr-namespace:Startup"
+  >
+    <LinearGradientBrush x:Key="WindowFrameBrush" StartPoint="0,0.5" EndPoint="1,0.5">
+        <GradientStop Color="#777" Offset="0.4"/>
+        <GradientStop Color="#999" Offset="1"/>
+    </LinearGradientBrush>
+</ResourceDictionary>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="Registry.View.ImportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tuo ClubOnWeb-tietokanta" Height="280" Width="430">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo
+        ProgressState="{Binding Path=ProgressState}"
+        ProgressValue="{Binding Path=ProgressValue}"
+        >
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
+    <Grid Background="#888">
+        <GroupBox Header="Tuo ClubOnWeb-tietokanta" Height="199" Name="groupBox1" VerticalAlignment="Top" Margin="0,0,0,0">
+            <Grid>
+                <ListView Height="95" Margin="12,75,12,6" />
+                <Label Height="28" Margin="12,12,14,0" Content="{Binding ImportLabel}" ToolTip="{Binding Path=ImportFileName}" VerticalAlignment="Top" />
+                <ProgressBar Height="29" Margin="12,40,12,0" VerticalAlignment="Top" Value="{Binding Path=ProgressValue}" ToolTip="{Binding Path=ImportFileName}" Minimum="0.0" Maximum="1.0" />
+            </Grid>
+        </GroupBox>
+        <Button Content="Sulje" Height="23" Margin="0,205,6,0" Command="{Binding CloseCommand}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" />
+    </Grid>
+</Window>

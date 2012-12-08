@@ -1,0 +1,48 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:Registry.ViewModel"
+  xmlns:vw="clr-namespace:Registry.View"
+  >
+    <!-- Data template bindings for main window. -->
+    <DataTemplate DataType="{x:Type vm:MemberListViewModel}">
+        <vw:MemberListView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:ChangelogViewModel}">
+        <vw:ChangelogView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:DebugLogViewModel}">
+        <vw:DebugLogView />
+    </DataTemplate>
+
+    <!-- 
+      This template explains how to render 
+      a tab item with a close button.
+      -->
+    <DataTemplate x:Key="ClosableTabItemTemplate">
+        <DockPanel Width="135">
+            <Button 
+                Command="{Binding Path=CloseCommand}"
+                Content="X"
+                Cursor="Hand"
+                ToolTip="Sulje välilehti"
+                DockPanel.Dock="Right"
+                Focusable="False"
+                FontFamily="Courier" 
+                FontSize="10"
+                FontWeight="Bold"  
+                Margin="0,0,0,0"
+                Padding="0"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="16" Height="16" 
+                />
+            <ContentPresenter 
+                Content="{Binding Path=DisplayName}" 
+                VerticalAlignment="Center" 
+                />
+        </DockPanel>
+    </DataTemplate>
+</ResourceDictionary>

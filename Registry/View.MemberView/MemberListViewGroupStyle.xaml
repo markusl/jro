@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Used to style grouped members in MemberListView -->
+    <GroupStyle x:Key="MemberListViewGroupStyle">
+        <GroupStyle.HeaderTemplate>
+            <DataTemplate>
+                <Border 
+                    Background="#888" 
+                    BorderBrush="LightGray" 
+                    BorderThickness="1" 
+                    CornerRadius="2" 
+                    Margin="1" 
+                    SnapsToDevicePixels="True">
+                    <TextBlock 
+                        x:Name="txt" 
+                        Background="#888"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Padding="4,2,0,2"
+                        Text="{Binding Path=Name}" 
+                        />
+                </Border>
+            </DataTemplate>
+        </GroupStyle.HeaderTemplate>
+    </GroupStyle>
+</ResourceDictionary>

@@ -1,0 +1,37 @@
+﻿<Window x:Class="Registry.View.EditContactWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Muokkaa yhteystietoa" Height="339" Width="440">
+    <Grid Background="#888">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="390*" />
+            <RowDefinition Height="50*" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="{Binding GroupBoxHeader}" Grid.ColumnSpan="2">
+            <Grid Name="grid1" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="206*" />
+                    <ColumnDefinition Width="380*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Etunimi" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label2" VerticalAlignment="Top" Width="120" />
+                <Label Content="Sukunimi" Height="28" HorizontalAlignment="Left" Margin="6,35,0,0" Name="label3" VerticalAlignment="Top" Width="120" />
+                <Label Content="Katuosoite" Height="28" HorizontalAlignment="Left" Margin="6,64,0,0" Name="label4" VerticalAlignment="Top" Width="120" />
+                <Label Content="Postinumero" Height="28" HorizontalAlignment="Left" Margin="6,93,0,0" Name="label5" VerticalAlignment="Top" Width="120" />
+                <Label Content="Postitoimipaikka" Height="28" HorizontalAlignment="Left" Margin="6,122,0,0" Name="label6" VerticalAlignment="Top" Width="120" />
+                <Label Content="Sähköposti" Height="28" HorizontalAlignment="Left" Margin="6,151,0,0" Name="label7" VerticalAlignment="Top" Width="120" />
+                <Label Content="Matkapuhelin" Height="28" HorizontalAlignment="Left" Margin="6,181,0,0" Name="label8" VerticalAlignment="Top" Width="120" />
+                <Label Content="Kotipuhelin" Height="28" HorizontalAlignment="Left" Margin="6,210,0,0" Name="label9" VerticalAlignment="Top" Width="120" />
+                <TextBox Height="23" Margin="13,6,6,0" Text="{Binding FirstName}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,35,6,0" Text="{Binding LastName}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,64,6,0" Text="{Binding StreetAddress}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,93,6,0" Text="{Binding PostalCode}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,122,6,0" Text="{Binding City}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,151,6,0" Text="{Binding Email}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,181,6,0" Text="{Binding Mobile}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+                <TextBox Height="23" Margin="13,210,6,0" Text="{Binding Phone}" VerticalAlignment="Top" Width="244" Grid.Column="1" />
+            </Grid>
+        </GroupBox>
+        <Button Grid.Row="1" Command="{Binding Path=SaveAndCloseCommand}" Content="Tallenna ja sulje" Height="23" HorizontalAlignment="Right" Margin="0,5,87,0" Name="button2" VerticalAlignment="Top" Width="110" />
+        <Button Grid.Row="1" Command="{Binding Path=CloseCommand}" Content="Sulje" Height="23" Margin="0,5,6,0" Name="button1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" />
+    </Grid>
+</Window>

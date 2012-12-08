@@ -1,0 +1,7 @@
+.hg
+bin/
+*obj/*
+*/obj/*
+TestResults/
+*.user
+*.suo

@@ -1,0 +1,8 @@
+bin/
+obj/
+TestResults/
+TestData/
+.user
+syntax: glob
+JRO.suo
+JRO.vsmdi

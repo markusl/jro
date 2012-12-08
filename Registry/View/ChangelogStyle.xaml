@@ -1,0 +1,54 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+  >
+    <!-- Used to style daily groups in ChangelogView -->
+    <ControlTemplate TargetType="{x:Type GroupItem}" x:Key="ChangelogGroupStyle">
+        <Expander IsExpanded="True" HorizontalContentAlignment="Stretch">
+            <Expander.Header>
+                <DockPanel>
+                    <Border 
+                    Background="#999" 
+                    BorderBrush="LightGray" 
+                    BorderThickness="1" 
+                    CornerRadius="2" 
+                    Margin="1" 
+                    SnapsToDevicePixels="True">
+                        <TextBlock 
+                        x:Name="txt" 
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Padding="4,2,0,2"
+                        Text="{Binding Name}" 
+                        />
+                    </Border>
+                </DockPanel>
+            </Expander.Header>
+            <Expander.Content>
+                <ItemsPresenter />
+            </Expander.Content>
+        </Expander>
+    </ControlTemplate>
+
+    <Style x:Key="ChangelogItemStyle" TargetType="{x:Type ListViewItem}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="#888" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#777" />
+            </MultiTrigger>
+			<Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#999" />
+			</Trigger>
+			<Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#999" />
+			</Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,115 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:Registry"
+    xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    >
+	<SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
+    <DataTemplate x:Key="MembersViewCellTemplate">
+        <Border Background="#888" 
+                BorderBrush="LightGray" 
+                BorderThickness="1" 
+                CornerRadius="2" 
+                Margin="1" 
+				MinWidth="400"
+                SnapsToDevicePixels="True" d:DataContext="{Binding Source={StaticResource SampleDataSource}}" HorizontalAlignment="Stretch">
+                <Grid x:Name="MemberInfoGrid" Margin="1,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Margin="0,0,0,0" Grid.RowSpan="1" Grid.ColumnSpan="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+        					    Background="#888"
+        					    FontWeight="Bold"
+        					    Foreground="White"
+        					    Text="{Binding DisplayName}" Margin="4,0,0,0"
+                   	 		    VerticalAlignment="Stretch" 
+                    	    />
+                    </Grid>
+                    <Label Content="☎" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Padding="1" />
+                    <TextBlock Grid.Column="0" Grid.Row="1"
+        				    Background="#888"
+        				    Foreground="White"
+        				    VerticalAlignment="Center"
+        				    Text="{Binding Phone}" Margin="30,0,0,0"
+                        />
+                    <Label Content="@" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" Padding="1" FontWeight="Bold"/>
+                    <TextBlock Grid.ColumnSpan="2" Grid.Row="2"
+        				    Background="#888"
+        				    Foreground="White"
+					VerticalAlignment="Center"
+        				    Text="{Binding Email}" Margin="30,0,0,0"
+                        />
+                </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MembersViewCellTemplate_PaymentStatus">
+        <Border 
+                Background="#888" 
+                BorderBrush="LightGray" 
+                BorderThickness="1" 
+                CornerRadius="2" 
+                Margin="1" 
+                SnapsToDevicePixels="True">
+            <Grid x:Name="ContainerGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="MemberInfoGrid" Margin="1,0,10,0" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+        				    FontWeight="Bold"
+        				    Foreground="White"
+        				    Padding="4,2,0,2" MinWidth="120" 
+        				    Margin="0,0,5,0" VerticalAlignment="Stretch" Text="trollol"
+                    	    />
+                    <TextBlock Grid.Column="1" Grid.Row="0"
+        				    Foreground="White"
+        				    Padding="14,2,0,2"
+        				    Text="12.09.2005" MinWidth="70" HorizontalAlignment="Right" 
+                        />
+                    <TextBlock Grid.Column="0" Grid.Row="1"
+        				    Foreground="White"
+        				    Padding="14,2,0,2"
+        				    Text="☎ {Binding Phone}" MinWidth="70" 
+                        />
+                    <TextBlock Grid.Column="1" Grid.Row="1"
+        				    Foreground="White"
+        				    Padding="2,2,0,2"
+        				    Text="{Binding Email}" MinWidth="120" 
+                        />
+                    <TextBlock Grid.ColumnSpan="2" Grid.Row="2"
+        				    Foreground="White"
+        				    Padding="14,2,0,2"
+        				    Text="{Binding Address}" MinWidth="250" 
+                        />
+                </Grid>
+            </Grid>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

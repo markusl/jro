@@ -1,0 +1,209 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Export" GeneratedClassName="Export">
+  <Profiles />
+  <Settings>
+    <Setting Name="FoDocumentHeader" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;
+  &lt;fo:layout-master-set&gt;
+    &lt;fo:simple-page-master master-name="first"
+          margin-right="1.5cm"
+          margin-left="1.5cm"
+          margin-bottom="2cm"
+          margin-top="1cm"
+          page-width="21cm"
+          page-height="29.7cm"&gt;
+      &lt;fo:region-body margin-top="4cm"/&gt;
+      &lt;fo:region-before extent="7cm"/&gt;
+      &lt;fo:region-after extent="1cm"/&gt;
+    &lt;/fo:simple-page-master&gt;
+  &lt;/fo:layout-master-set&gt;
+
+  &lt;fo:page-sequence master-reference="first"&gt;
+
+  &lt;fo:static-content flow-name="xsl-region-before"&gt;
+      &lt;fo:list-block font-size="10pt" provisional-label-separation="0pt"&gt;
+          &lt;fo:list-item&gt;
+              &lt;fo:list-item-label end-indent="label-end()"&gt;
+                  &lt;fo:block text-align="left"&gt;
+                      &lt;fo:block&gt;{0}&lt;/fo:block&gt;
+                      &lt;fo:block&gt;{1}&lt;/fo:block&gt;
+                  &lt;/fo:block&gt;
+              &lt;/fo:list-item-label&gt;
+              &lt;fo:list-item-body start-indent="body-start()"&gt;
+                  &lt;fo:list-block provisional-label-separation="0pt"&gt;
+                      &lt;fo:list-item&gt;
+                          &lt;fo:list-item-label end-indent="label-end()"&gt;
+                              &lt;fo:block text-align="center"&gt;
+                                  &lt;fo:block&gt;{2}&lt;/fo:block&gt;
+                                  &lt;fo:block&gt;{3}&lt;/fo:block&gt;
+                              &lt;/fo:block&gt;
+                          &lt;/fo:list-item-label&gt;
+                          &lt;fo:list-item-body start-indent="body-start()"&gt;
+                              &lt;fo:block text-align="right"&gt;
+                                &lt;fo:page-number/&gt; (&lt;fo:page-number-citation ref-id="last-page"/&gt;)
+                              &lt;/fo:block&gt;
+                              &lt;fo:block&gt;{4}&lt;/fo:block&gt;
+                          &lt;/fo:list-item-body&gt;
+                      &lt;/fo:list-item&gt;
+                  &lt;/fo:list-block&gt;
+              &lt;/fo:list-item-body&gt;
+          &lt;/fo:list-item&gt;
+      &lt;/fo:list-block&gt;
+  &lt;/fo:static-content&gt;
+ 
+  &lt;fo:static-content flow-name="xsl-region-after"&gt;
+  &lt;/fo:static-content&gt;
+
+    &lt;fo:flow flow-name="xsl-region-body"&gt;</Value>
+    </Setting>
+    <Setting Name="FoDocumentEnd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">      &lt;fo:block id="last-page"&gt;
+      &lt;/fo:block&gt;
+    &lt;/fo:flow&gt;
+  &lt;/fo:page-sequence&gt;
+&lt;/fo:root&gt;
+</Value>
+    </Setting>
+    <Setting Name="Fo4ColumnTableStart" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">      &lt;fo:table font-size="9pt"&gt;
+        &lt;fo:table-column column-width="4cm"/&gt;
+        &lt;fo:table-column column-width="5cm"/&gt;
+        &lt;fo:table-column column-width="4.5cm"/&gt;
+        &lt;fo:table-column column-width="4.5cm"/&gt;
+      
+        &lt;fo:table-header background-color="#BBB"&gt;
+          &lt;fo:table-row&gt;
+            &lt;fo:table-cell&gt;
+              &lt;fo:block font-weight="bold" text-align="center" vertical-align="middle"&gt;
+              {0}
+              &lt;/fo:block&gt;
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell&gt;
+              &lt;fo:block font-weight="bold" text-align="center" vertical-align="middle"&gt;
+              {1}
+              &lt;/fo:block&gt;
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell&gt;
+              &lt;fo:block font-weight="bold" text-align="center" vertical-align="middle"&gt;
+              {2}
+              &lt;/fo:block&gt;
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell&gt;
+              &lt;fo:block font-weight="bold" text-align="center" vertical-align="middle"&gt;
+              {3}
+              &lt;/fo:block&gt;
+            &lt;/fo:table-cell&gt;
+          &lt;/fo:table-row&gt;
+        &lt;/fo:table-header&gt;
+
+        &lt;fo:table-body&gt;
+</Value>
+    </Setting>
+    <Setting Name="Fo4ColumnTableEvenRow" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">          &lt;fo:table-row&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {0}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {1}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {2}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {3}
+            &lt;/fo:table-cell&gt;
+          &lt;/fo:table-row&gt;
+</Value>
+    </Setting>
+    <Setting Name="FoFirstBoldBlock" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;fo:block font-weight="bold" border-right-width="0.5pt" text-align="left" vertical-align="middle"&gt;
+              {0}
+&lt;/fo:block&gt;</Value>
+    </Setting>
+    <Setting Name="FoFirstBlock" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;fo:block border-right-width="0.5pt" text-align="left" vertical-align="middle"&gt;
+              {0}
+&lt;/fo:block&gt;
+</Value>
+    </Setting>
+    <Setting Name="FoBlock" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;fo:block&gt;{0}&lt;/fo:block&gt;
+</Value>
+    </Setting>
+    <Setting Name="FoTableEnd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">        &lt;/fo:table-body&gt;
+      &lt;/fo:table&gt;</Value>
+    </Setting>
+    <Setting Name="Fo4ColumnTableOddRow" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">          &lt;fo:table-row background-color="#EEE"&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {0}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {1}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {2}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {3}
+            &lt;/fo:table-cell&gt;
+          &lt;/fo:table-row&gt;
+</Value>
+    </Setting>
+    <Setting Name="FoBlockBold" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;fo:block font-weight="bold"&gt;{0}&lt;/fo:block&gt;
+</Value>
+    </Setting>
+    <Setting Name="Fo2ColumnTableStart" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">      &lt;fo:table font-size="9pt"&gt;
+        &lt;fo:table-column column-width="6cm"/&gt;
+        &lt;fo:table-column column-width="6cm"/&gt;
+      
+        &lt;fo:table-header background-color="#BBB"&gt;
+          &lt;fo:table-row&gt;
+            &lt;fo:table-cell&gt;
+              &lt;fo:block font-weight="bold" text-align="center" vertical-align="middle"&gt;
+              {0}
+              &lt;/fo:block&gt;
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell&gt;
+              &lt;fo:block font-weight="bold" text-align="center" vertical-align="middle"&gt;
+              {1}
+              &lt;/fo:block&gt;
+            &lt;/fo:table-cell&gt;
+          &lt;/fo:table-row&gt;
+        &lt;/fo:table-header&gt;
+
+        &lt;fo:table-body&gt;
+</Value>
+    </Setting>
+    <Setting Name="Fo2ColumnTableEvenRow" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">          &lt;fo:table-row&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {0}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {1}
+            &lt;/fo:table-cell&gt;
+          &lt;/fo:table-row&gt;
+</Value>
+    </Setting>
+    <Setting Name="Fo2ColumnTableOddRow" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">          &lt;fo:table-row background-color="#EEE"&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {0}
+            &lt;/fo:table-cell&gt;
+            &lt;fo:table-cell padding="2pt"&gt;
+              {1}
+            &lt;/fo:table-cell&gt;
+          &lt;/fo:table-row&gt;</Value>
+    </Setting>
+    <Setting Name="FoBlockItalic" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;fo:block font-style="italic"&gt;{0}&lt;/fo:block&gt;
+</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

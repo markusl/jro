@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Members.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MembersStoreContainer">
+    <EntitySet Name="AddressSet" EntityType="Members.Store.AddressSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MemberDetaisSet" EntityType="Members.Store.MemberDetaisSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrganizationSet" EntityType="Members.Store.OrganizationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChangelogSet" EntityType="Members.Store.ChangelogSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MemberSet" EntityType="Members.Store.MemberSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactSet" EntityType="Members.Store.ContactSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MemberAddress" Association="Members.Store.MemberAddress">
+      <End Role="Member" EntitySet="MemberSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+    <AssociationSet Name="MemberMemberDetais" Association="Members.Store.MemberMemberDetais">
+      <End Role="Member" EntitySet="MemberSet" />
+      <End Role="MemberDetais" EntitySet="MemberDetaisSet" />
+    </AssociationSet>
+    <AssociationSet Name="MemberContact" Association="Members.Store.MemberContact">
+      <End Role="Member" EntitySet="MemberSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <AssociationSet Name="ContactAddress" Association="Members.Store.ContactAddress">
+      <End Role="Contact" EntitySet="ContactSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AddressSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="nvarchar" Nullable="false" />
+    <Property Name="city" Type="nvarchar" Nullable="false" />
+    <Property Name="postalcode" Type="nvarchar" Nullable="false" />
+    <Property Name="country" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemberDetaisSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberno" Type="nvarchar" Nullable="false" />
+    <Property Name="memberclass" Type="nvarchar" Nullable="false" />
+    <Property Name="membergroup" Type="nvarchar" Nullable="false" />
+    <Property Name="memberjob" Type="nvarchar" Nullable="false" />
+    <Property Name="joindate" Type="nvarchar" Nullable="false" />
+    <Property Name="exitdate" Type="nvarchar" Nullable="false" />
+    <Property Name="changeddate" Type="nvarchar" Nullable="false" />
+    <Property Name="paymentstatus" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrganizationSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="key" Type="nvarchar" Nullable="false" />
+    <Property Name="value" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangelogSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="action" Type="nvarchar" Nullable="false" />
+    <Property Name="newvalue" Type="nvarchar" Nullable="false" />
+    <Property Name="oldvalue" Type="nvarchar" Nullable="false" />
+    <Property Name="memberid" Type="nvarchar" Nullable="false" />
+    <Property Name="time" Type="nvarchar" Nullable="false" />
+    <Property Name="date" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemberSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" Nullable="false" />
+    <Property Name="middlenames" Type="nvarchar" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" Nullable="false" />
+    <Property Name="email" Type="nvarchar" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" Nullable="false" />
+    <Property Name="sex" Type="nvarchar" Nullable="false" />
+    <Property Name="birthdate" Type="nvarchar" Nullable="false" />
+    <Property Name="Address_Id" Type="integer" Nullable="false" />
+    <Property Name="MemberDetais_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" Nullable="false" />
+    <Property Name="email" Type="nvarchar" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" Nullable="false" />
+    <Property Name="Member_Id" Type="integer" Nullable="false" />
+    <Property Name="Address_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <Association Name="MemberAddress">
+    <End Role="Member" Type="Members.Store.MemberSet" Multiplicity="*" />
+    <End Role="Address" Type="Members.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="Address_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MemberMemberDetais">
+    <End Role="Member" Type="Members.Store.MemberSet" Multiplicity="*" />
+    <End Role="MemberDetais" Type="Members.Store.MemberDetaisSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="MemberDetais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="MemberDetais_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MemberContact">
+    <End Role="Member" Type="Members.Store.MemberSet" Multiplicity="1" />
+    <End Role="Contact" Type="Members.Store.ContactSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="Member_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactAddress">
+    <End Role="Contact" Type="Members.Store.ContactSet" Multiplicity="*" />
+    <End Role="Address" Type="Members.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="Address_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Members" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="MembersContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressSet" EntityType="Members.Address" />
+          <EntitySet Name="MemberDetaisSet" EntityType="Members.MemberDetais" />
+          <EntitySet Name="OrganizationSet" EntityType="Members.Organization" />
+          <EntitySet Name="ChangelogSet" EntityType="Members.Changelog" />
+          <EntitySet Name="MemberSet" EntityType="Members.Member" />
+          <EntitySet Name="ContactSet" EntityType="Members.Contact" />
+          <AssociationSet Name="MemberAddress" Association="Members.MemberAddress">
+            <End Role="Member" EntitySet="MemberSet" />
+            <End Role="Address" EntitySet="AddressSet" /></AssociationSet>
+          <AssociationSet Name="MemberMemberDetais" Association="Members.MemberMemberDetais">
+            <End Role="Member" EntitySet="MemberSet" />
+            <End Role="MemberDetais" EntitySet="MemberDetaisSet" /></AssociationSet>
+          <AssociationSet Name="MemberContact" Association="Members.MemberContact">
+            <End Role="Member" EntitySet="MemberSet" />
+            <End Role="Contact" EntitySet="ContactSet" /></AssociationSet>
+          <AssociationSet Name="ContactAddress" Association="Members.ContactAddress">
+            <End Role="Contact" EntitySet="ContactSet" />
+            <End Role="Address" EntitySet="AddressSet" /></AssociationSet></EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="address" Nullable="false" />
+          <Property Type="String" Name="city" Nullable="false" />
+          <Property Type="String" Name="postalcode" Nullable="false" />
+          <Property Type="String" Name="country" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Members.MemberAddress" FromRole="Address" ToRole="Member" />
+          <NavigationProperty Name="Contact" Relationship="Members.ContactAddress" FromRole="Address" ToRole="Contact" /></EntityType>
+        <EntityType Name="MemberDetais">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="memberno" Nullable="false" />
+          <Property Type="String" Name="memberclass" Nullable="false" />
+          <Property Type="String" Name="membergroup" Nullable="false" />
+          <Property Type="String" Name="memberjob" Nullable="false" />
+          <Property Type="String" Name="joindate" Nullable="false" />
+          <Property Type="String" Name="exitdate" Nullable="false" />
+          <Property Type="String" Name="changeddate" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Members.MemberMemberDetais" FromRole="MemberDetais" ToRole="Member" />
+          <Property Type="String" Name="paymentstatus" Nullable="false" >
+            <Documentation>
+              <Summary>PaymentLeft</Summary></Documentation></Property></EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Type="Int64" Name="Id" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" Nullable="false" />
+          <Property Type="String" Name="key" Nullable="false" />
+          <Property Type="String" Name="value" Nullable="false" /></EntityType>
+        <EntityType Name="Changelog">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="action" Nullable="false" />
+          <Property Type="String" Name="newvalue" Nullable="false" />
+          <Property Type="String" Name="oldvalue" Nullable="false" />
+          <Property Type="String" Name="memberid" Nullable="false" />
+          <Property Type="String" Name="time" Nullable="false" />
+          <Property Type="String" Name="date" Nullable="false" /></EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="firstname" Nullable="false" />
+          <Property Type="String" Name="lastname" Nullable="false" />
+          <Property Type="String" Name="middlenames" Nullable="false" />
+          <Property Type="String" Name="mobile" Nullable="false" />
+          <Property Type="String" Name="email" Nullable="false" />
+          <Property Type="String" Name="phone" Nullable="false" />
+          <Property Type="String" Name="sex" Nullable="false" />
+          <Property Type="String" Name="birthdate" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="Members.MemberAddress" FromRole="Member" ToRole="Address" />
+          <NavigationProperty Name="MemberDetais" Relationship="Members.MemberMemberDetais" FromRole="Member" ToRole="MemberDetais" />
+          <NavigationProperty Name="Contact" Relationship="Members.MemberContact" FromRole="Member" ToRole="Contact" /></EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="firstname" Nullable="false" />
+          <Property Type="String" Name="lastname" Nullable="false" />
+          <Property Type="String" Name="mobile" Nullable="false" />
+          <Property Type="String" Name="email" Nullable="false" />
+          <Property Type="String" Name="phone" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Members.MemberContact" FromRole="Contact" ToRole="Member" />
+          <NavigationProperty Name="Address" Relationship="Members.ContactAddress" FromRole="Contact" ToRole="Address" /></EntityType>
+        <Association Name="MemberAddress">
+          <End Type="Members.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="Members.Address" Role="Address" Multiplicity="1" /></Association>
+        <Association Name="MemberMemberDetais">
+          <End Type="Members.Member" Role="Member" Multiplicity="1" />
+          <End Type="Members.MemberDetais" Role="MemberDetais" Multiplicity="1" /></Association>
+        <Association Name="MemberContact">
+          <End Type="Members.Member" Role="Member" Multiplicity="1" />
+          <End Type="Members.Contact" Role="Contact" Multiplicity="*" /></Association>
+        <Association Name="ContactAddress">
+          <End Type="Members.Contact" Role="Contact" Multiplicity="0..1" />
+          <End Type="Members.Address" Role="Address" Multiplicity="1" /></Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MembersStoreContainer" CdmEntityContainer="MembersContainer">
+    <EntitySetMapping Name="AddressSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Members.Address)">
+        <MappingFragment StoreEntitySet="AddressSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="postalcode" ColumnName="postalcode" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberDetaisSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Members.MemberDetais)">
+        <MappingFragment StoreEntitySet="MemberDetaisSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="memberclass" ColumnName="memberclass" />
+          <ScalarProperty Name="membergroup" ColumnName="membergroup" />
+          <ScalarProperty Name="memberjob" ColumnName="memberjob" />
+          <ScalarProperty Name="joindate" ColumnName="joindate" />
+          <ScalarProperty Name="exitdate" ColumnName="exitdate" />
+          <ScalarProperty Name="changeddate" ColumnName="changeddate" />
+          <ScalarProperty Name="paymentstatus" ColumnName="paymentstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Members.Organization)">
+        <MappingFragment StoreEntitySet="OrganizationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangelogSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Members.Changelog)">
+        <MappingFragment StoreEntitySet="ChangelogSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="newvalue" ColumnName="newvalue" />
+          <ScalarProperty Name="oldvalue" ColumnName="oldvalue" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Members.Member)">
+        <MappingFragment StoreEntitySet="MemberSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="middlenames" ColumnName="middlenames" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Members.Contact)">
+        <MappingFragment StoreEntitySet="ContactSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MemberAddress" TypeName="Members.MemberAddress" StoreEntitySet="MemberSet">
+      <EndProperty Name="Address">
+        <ScalarProperty Name="Id" ColumnName="Address_Id" />
+      </EndProperty>
+      <EndProperty Name="Member">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MemberMemberDetais" TypeName="Members.MemberMemberDetais" StoreEntitySet="MemberSet">
+      <EndProperty Name="MemberDetais">
+        <ScalarProperty Name="Id" ColumnName="MemberDetais_Id" />
+      </EndProperty>
+      <EndProperty Name="Member">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MemberContact" TypeName="Members.MemberContact" StoreEntitySet="ContactSet">
+      <EndProperty Name="Member">
+        <ScalarProperty Name="Id" ColumnName="Member_Id" />
+      </EndProperty>
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ContactAddress" TypeName="Members.ContactAddress" StoreEntitySet="ContactSet">
+      <EndProperty Name="Address">
+        <ScalarProperty Name="Id" ColumnName="Address_Id" />
+      </EndProperty>
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToSQL10.tt" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Members" ZoomLevel="83" >
+        <EntityTypeShape EntityType="Members.Contact" Width="1.5" PointX="4.125" PointY="1.5" Height="2.5571907552083317" />
+        <AssociationConnector Association="Members.ContactAddress">
+          <ConnectorPoint PointX="3.625" PointY="4.0571907552083317" />
+          <ConnectorPoint PointX="3.625" PointY="4.5" />
+          </AssociationConnector>
+        <AssociationConnector Association="Members.MemberContact">
+          <ConnectorPoint PointX="2" PointY="2.8410953776041659" />
+          <ConnectorPoint PointX="2.875" PointY="2.8410953776041659" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="Members.MemberDetais" Width="1.5" PointX="2.375" PointY="1.75" Height="2.9417936197916656" />
+        <AssociationConnector Association="Members.MemberMemberDetais">
+          <ConnectorPoint PointX="1.25" PointY="4.951396484375" />
+          <ConnectorPoint PointX="1.25" PointY="5.375" /></AssociationConnector>
+        <AssociationConnector Association="Members.MemberAddress">
+          <ConnectorPoint PointX="2" PointY="4.7256982421875" />
+          <ConnectorPoint PointX="2.875" PointY="4.7256982421875" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="Members.Member" Width="1.5" PointX="0.5" PointY="1.5" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="Members.Address" Width="1.5" PointX="4.25" PointY="4.125" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Members.Changelog" Width="1.5" PointX="5.75" PointY="1.5" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="Members.Organization" Width="1.5" PointX="5.875" PointY="4" Height="1.59568359375" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,89 @@
+﻿<SampleDataSource>
+	<SampleDataSource.Collection>
+		<Item name="Aaberg, Jesper" address="4567 Main St., Buffalo, NY 98052" city="Nam" postalcode="10000" mobile="(111) 555-0100" department="Cras" email="someone@example.com"/>
+		<Item name="Adams, Ellen" address="1234 Main St., Buffalo, NY 98052" city="Sed" postalcode="10001" mobile="(222) 555-0101" department="Duis" email="user@adventure-works.com"/>
+		<Item name="Adams, Terry" address="2345 Main St., Buffalo, NY 98052" city="Dis" postalcode="10002" mobile="(333) 555-0102" department="Nunc" email="someone@adventure-works.com"/>
+		<Item name="Adams, Terry" address="789 Main St., Buffalo, NY 98052" city="Est" postalcode="10003" mobile="(444) 555-0103" department="Amet" email="user@example.com"/>
+		<Item name="Penor, Lori" address="4567 Front St., Seattle, WA 12345" city="Hac" postalcode="10004" mobile="(111) 555-0104" department="Ante" email="user-2@fabrikam.com"/>
+		<Item name="Pfeiffer, Michael" address="1234 Front St., Seattle, WA 12345" city="Leo" postalcode="10005" mobile="(222) 555-0105" department="Arcu" email="user-3@fabrikam.com"/>
+		<Item name="Philips, Carol" address="2345 Front St., Seattle, WA 12345" city="Mus" postalcode="10006" mobile="(333) 555-0106" department="Diam" email="user-4@fabrikam.com"/>
+		<Item name="Poe, Toni" address="789 Front St., Seattle, WA 12345" city="Nec" postalcode="10007" mobile="(444) 555-0107" department="Eget" email="user-5@fabrikam.com"/>
+		<Item name="Hicks, Cassie" address="4567 Main St., Seattle, WA 12345" city="Non" postalcode="10008" mobile="(555) 555-0108" department="Elit" email="user-6@fabrikam.com"/>
+		<Item name="Argentiero, Luca" address="1234 1st Ave, San Francisco, CA 99999" city="Per" postalcode="10009" mobile="(111) 555-0109" department="Enim" email="user-7@fabrikam.com"/>
+		<Item name="Aaberg, Jesper" address="4567 Main St., Buffalo, NY 98052" city="Sed" postalcode="10000" mobile="(111) 555-0100" department="Erat" email="someone@example.com"/>
+		<Item name="Aaberg, Jesper" address="4567 Main St., Buffalo, NY 98052" city="Sem" postalcode="10001" mobile="(111) 555-0100" department="Eros" email="user@adventure-works.com"/>
+		<Item name="Adams, Ellen" address="1234 Main St., Buffalo, NY 98052" city="Sit" postalcode="10002" mobile="(222) 555-0101" department="Nibh" email="someone@adventure-works.com"/>
+		<Item name="Adams, Terry" address="2345 Main St., Buffalo, NY 98052" city="Vel" postalcode="10003" mobile="(333) 555-0102" department="Nisi" email="user@example.com"/>
+		<Item name="Adams, Terry" address="789 Main St., Buffalo, NY 98052" city="Nam" postalcode="10004" mobile="(444) 555-0103" department="Nisl" email="user-2@fabrikam.com"/>
+		<Item name="Penor, Lori" address="4567 Front St., Seattle, WA 12345" city="Sed" postalcode="10005" mobile="(111) 555-0104" department="Nunc" email="user-3@fabrikam.com"/>
+		<Item name="Pfeiffer, Michael" address="1234 Front St., Seattle, WA 12345" city="Dis" postalcode="10006" mobile="(222) 555-0105" department="Odio" email="user-4@fabrikam.com"/>
+		<Item name="Philips, Carol" address="2345 Front St., Seattle, WA 12345" city="Est" postalcode="10007" mobile="(333) 555-0106" department="Orci" email="user-5@fabrikam.com"/>
+		<Item name="Poe, Toni" address="789 Front St., Seattle, WA 12345" city="Hac" postalcode="10008" mobile="(444) 555-0107" department="Pede" email="user-6@fabrikam.com"/>
+		<Item name="Hicks, Cassie" address="4567 Main St., Seattle, WA 12345" city="Leo" postalcode="10009" mobile="(555) 555-0108" department="Quam" email="user-7@fabrikam.com"/>
+		<Item name="Argentiero, Luca" address="1234 1st Ave, San Francisco, CA 99999" city="Mus" postalcode="10010" mobile="(111) 555-0109" department="Quis" email="user-8@fabrikam.com"/>
+		<Item name="Perry, Brian" address="2345 1st Ave, San Francisco, CA 99999" city="Nec" postalcode="10011" mobile="(222) 555-0110" department="Urna" email="someone-1@adventure-works.com"/>
+		<Item name="Ramos, Luciana" address="789 1st Ave, San Francisco, CA 99999" city="Non" postalcode="10012" mobile="(111) 555-0120" department="Cras" email="someone-2@adventure-works.com"/>
+		<Item name="Barber, David" address="4567 1st Ave, San Francisco, CA 99999" city="Per" postalcode="10013" mobile="(222) 555-0121" department="Duis" email="someone-3@adventure-works.com"/>
+		<Item name="Jamison, Jay" address="1234 Main St., San Francisco, CA 99999" city="Sed" postalcode="10014" mobile="(333) 555-0122" department="Nunc" email="someone-4@adventure-works.com"/>
+		<Item name="Reid, Miles" address="2345 Front St., San Francisco, CA 99999" city="Sem" postalcode="10015" mobile="(444) 555-0123" department="Amet" email="someone-5@adventure-works.com"/>
+		<Item name="Bowen, Eli" address="789 22nd St NE, Miami, FL 98052" city="Sit" postalcode="10016" mobile="(111) 555-0134" department="Ante" email="someone-6@adventure-works.com"/>
+		<Item name="Kane, John" address="4567 22nd St NE, Miami, FL 98052" city="Vel" postalcode="10017" mobile="(222) 555-0145" department="Arcu" email="someone-7@adventure-works.com"/>
+		<Item name="Sarin, Raman" address="1234 22nd St NE, Miami, FL 98052" city="Nam" postalcode="10018" mobile="(333) 555-0156" department="Diam" email="someone@example.com"/>
+		<Item name="Sato, Naoki" address="2345 22nd St NE, Miami, FL 98052" city="Sed" postalcode="10019" mobile="(444) 555-0167" department="Eget" email="user@adventure-works.com"/>
+		<Item name="Silva, Alexandre" address="4567 Main St., Buffalo, NY 98052" city="Dis" postalcode="10020" mobile="(555) 555-0178" department="Elit" email="someone@adventure-works.com"/>
+		<Item name="Cook, Kevin" address="1234 Main St., Buffalo, NY 98052" city="Est" postalcode="10021" mobile="(111) 555-0189" department="Enim" email="user@example.com"/>
+		<Item name="Li, Yuhong" address="2345 Main St., Buffalo, NY 98052" city="Hac" postalcode="10022" mobile="(222) 555-0121" department="Erat" email="user-2@fabrikam.com"/>
+		<Item name="Strande, Amy" address="789 Main St., Buffalo, NY 98052" city="Leo" postalcode="10023" mobile="(111) 555-0122" department="Eros" email="user-3@fabrikam.com"/>
+		<Item name="Makovac, Zrinka" address="4567 Front St., Seattle, WA 12345" city="Mus" postalcode="10024" mobile="(222) 555-0123" department="Nibh" email="user-4@fabrikam.com"/>
+		<Item name="Miller, Ben" address="1234 Front St., Seattle, WA 12345" city="Nec" postalcode="10025" mobile="(333) 555-0124" department="Nisi" email="user-5@fabrikam.com"/>
+		<Item name="Orton, Jon" address="2345 Front St., Seattle, WA 12345" city="Non" postalcode="10026" mobile="(444) 555-0125" department="Nisl" email="user-6@fabrikam.com"/>
+		<Item name="Zhang, Larry" address="789 Front St., Seattle, WA 12345" city="Per" postalcode="10027" mobile="(111) 555-0100" department="Nunc" email="user-7@fabrikam.com"/>
+		<Item name="Gladkikh, Andrey" address="4567 Main St., Seattle, WA 12345" city="Sed" postalcode="10028" mobile="(222) 555-0101" department="Odio" email="user-8@fabrikam.com"/>
+		<Item name="Meyer, April" address="1234 1st Ave, San Francisco, CA 99999" city="Sem" postalcode="10029" mobile="(333) 555-0102" department="Orci" email="someone-1@adventure-works.com"/>
+		<Item name="Clark, Molly" address="2345 1st Ave, San Francisco, CA 99999" city="Sit" postalcode="10030" mobile="(444) 555-0103" department="Pede" email="someone-2@adventure-works.com"/>
+		<Item name="Dellamore, Luca" address="789 1st Ave, San Francisco, CA 99999" city="Vel" postalcode="10031" mobile="(111) 555-0104" department="Quam" email="someone-3@adventure-works.com"/>
+		<Item name="Aaberg, Jesper" address="4567 1st Ave, San Francisco, CA 99999" city="Nam" postalcode="10032" mobile="(222) 555-0105" department="Quis" email="someone-4@adventure-works.com"/>
+		<Item name="Adams, Ellen" address="1234 Main St., San Francisco, CA 99999" city="Sed" postalcode="10033" mobile="(333) 555-0106" department="Urna" email="someone-5@adventure-works.com"/>
+		<Item name="Adams, Terry" address="2345 Front St., San Francisco, CA 99999" city="Dis" postalcode="10034" mobile="(444) 555-0107" department="Cras" email="someone-6@adventure-works.com"/>
+		<Item name="Adams, Terry" address="789 22nd St NE, Miami, FL 98052" city="Est" postalcode="10035" mobile="(555) 555-0108" department="Duis" email="someone-7@adventure-works.com"/>
+		<Item name="Penor, Lori" address="4567 22nd St NE, Miami, FL 98052" city="Hac" postalcode="10036" mobile="(111) 555-0109" department="Nunc" email="someone@example.com"/>
+		<Item name="Pfeiffer, Michael" address="1234 22nd St NE, Miami, FL 98052" city="Leo" postalcode="10037" mobile="(222) 555-0110" department="Amet" email="user@adventure-works.com"/>
+		<Item name="Philips, Carol" address="2345 22nd St NE, Miami, FL 98052" city="Mus" postalcode="10038" mobile="(111) 555-0120" department="Ante" email="someone@adventure-works.com"/>
+		<Item name="Poe, Toni" address="4567 Main St., Buffalo, NY 98052" city="Nec" postalcode="10039" mobile="(222) 555-0121" department="Arcu" email="user@example.com"/>
+		<Item name="Hicks, Cassie" address="1234 Main St., Buffalo, NY 98052" city="Non" postalcode="10040" mobile="(333) 555-0122" department="Diam" email="user-2@fabrikam.com"/>
+		<Item name="Argentiero, Luca" address="2345 Main St., Buffalo, NY 98052" city="Per" postalcode="10041" mobile="(444) 555-0123" department="Eget" email="user-3@fabrikam.com"/>
+		<Item name="Perry, Brian" address="789 Main St., Buffalo, NY 98052" city="Sed" postalcode="10042" mobile="(111) 555-0134" department="Elit" email="user-4@fabrikam.com"/>
+		<Item name="Ramos, Luciana" address="4567 Front St., Seattle, WA 12345" city="Sem" postalcode="10043" mobile="(222) 555-0145" department="Enim" email="user-5@fabrikam.com"/>
+		<Item name="Barber, David" address="1234 Front St., Seattle, WA 12345" city="Sit" postalcode="10044" mobile="(333) 555-0156" department="Erat" email="user-6@fabrikam.com"/>
+		<Item name="Jamison, Jay" address="2345 Front St., Seattle, WA 12345" city="Vel" postalcode="10045" mobile="(444) 555-0167" department="Eros" email="user-7@fabrikam.com"/>
+		<Item name="Reid, Miles" address="789 Front St., Seattle, WA 12345" city="Nam" postalcode="10046" mobile="(555) 555-0178" department="Nibh" email="user-8@fabrikam.com"/>
+		<Item name="Bowen, Eli" address="4567 Main St., Seattle, WA 12345" city="Sed" postalcode="10047" mobile="(111) 555-0189" department="Nisi" email="someone-1@adventure-works.com"/>
+		<Item name="Kane, John" address="1234 1st Ave, San Francisco, CA 99999" city="Dis" postalcode="10048" mobile="(222) 555-0121" department="Nisl" email="someone-2@adventure-works.com"/>
+		<Item name="Sarin, Raman" address="2345 1st Ave, San Francisco, CA 99999" city="Est" postalcode="10049" mobile="(111) 555-0122" department="Nunc" email="someone-3@adventure-works.com"/>
+		<Item name="Sato, Naoki" address="789 1st Ave, San Francisco, CA 99999" city="Hac" postalcode="10050" mobile="(222) 555-0123" department="Odio" email="someone-4@adventure-works.com"/>
+		<Item name="Silva, Alexandre" address="4567 1st Ave, San Francisco, CA 99999" city="Leo" postalcode="10051" mobile="(333) 555-0124" department="Orci" email="someone-5@adventure-works.com"/>
+		<Item name="Cook, Kevin" address="1234 Main St., San Francisco, CA 99999" city="Mus" postalcode="10052" mobile="(444) 555-0125" department="Pede" email="someone-6@adventure-works.com"/>
+		<Item name="Li, Yuhong" address="2345 Front St., San Francisco, CA 99999" city="Nec" postalcode="10053" mobile="(111) 555-0100" department="Quam" email="someone-7@adventure-works.com"/>
+		<Item name="Strande, Amy" address="789 22nd St NE, Miami, FL 98052" city="Non" postalcode="10054" mobile="(222) 555-0101" department="Quis" email="someone@example.com"/>
+		<Item name="Makovac, Zrinka" address="4567 22nd St NE, Miami, FL 98052" city="Per" postalcode="10055" mobile="(333) 555-0102" department="Urna" email="user@adventure-works.com"/>
+		<Item name="Miller, Ben" address="1234 22nd St NE, Miami, FL 98052" city="Sed" postalcode="10056" mobile="(444) 555-0103" department="Cras" email="someone@adventure-works.com"/>
+		<Item name="Orton, Jon" address="2345 22nd St NE, Miami, FL 98052" city="Sem" postalcode="10057" mobile="(111) 555-0104" department="Duis" email="user@example.com"/>
+		<Item name="Zhang, Larry" address="4567 Main St., Buffalo, NY 98052" city="Sit" postalcode="10058" mobile="(222) 555-0105" department="Nunc" email="user-2@fabrikam.com"/>
+		<Item name="Gladkikh, Andrey" address="1234 Main St., Buffalo, NY 98052" city="Vel" postalcode="10059" mobile="(333) 555-0106" department="Amet" email="user-3@fabrikam.com"/>
+		<Item name="Meyer, April" address="2345 Main St., Buffalo, NY 98052" city="Nam" postalcode="10060" mobile="(444) 555-0107" department="Ante" email="user-4@fabrikam.com"/>
+		<Item name="Clark, Molly" address="789 Main St., Buffalo, NY 98052" city="Sed" postalcode="10061" mobile="(555) 555-0108" department="Arcu" email="user-5@fabrikam.com"/>
+		<Item name="Dellamore, Luca" address="4567 Front St., Seattle, WA 12345" city="Dis" postalcode="10062" mobile="(111) 555-0109" department="Diam" email="user-6@fabrikam.com"/>
+		<Item name="Aaberg, Jesper" address="1234 Front St., Seattle, WA 12345" city="Est" postalcode="10063" mobile="(222) 555-0110" department="Eget" email="user-7@fabrikam.com"/>
+		<Item name="Adams, Ellen" address="2345 Front St., Seattle, WA 12345" city="Hac" postalcode="10064" mobile="(111) 555-0120" department="Elit" email="user-8@fabrikam.com"/>
+		<Item name="Adams, Terry" address="789 Front St., Seattle, WA 12345" city="Leo" postalcode="10065" mobile="(222) 555-0121" department="Enim" email="someone-1@adventure-works.com"/>
+		<Item name="Adams, Terry" address="4567 Main St., Seattle, WA 12345" city="Mus" postalcode="10066" mobile="(333) 555-0122" department="Erat" email="someone-2@adventure-works.com"/>
+		<Item name="Penor, Lori" address="1234 1st Ave, San Francisco, CA 99999" city="Nec" postalcode="10067" mobile="(444) 555-0123" department="Eros" email="someone-3@adventure-works.com"/>
+		<Item name="Pfeiffer, Michael" address="2345 1st Ave, San Francisco, CA 99999" city="Non" postalcode="10068" mobile="(111) 555-0134" department="Nibh" email="someone-4@adventure-works.com"/>
+		<Item name="Philips, Carol" address="789 1st Ave, San Francisco, CA 99999" city="Per" postalcode="10069" mobile="(222) 555-0145" department="Nisi" email="someone-5@adventure-works.com"/>
+		<Item name="Poe, Toni" address="4567 1st Ave, San Francisco, CA 99999" city="Sed" postalcode="10070" mobile="(333) 555-0156" department="Nisl" email="someone-6@adventure-works.com"/>
+		<Item name="Hicks, Cassie" address="1234 Main St., San Francisco, CA 99999" city="Sem" postalcode="10071" mobile="(444) 555-0167" department="Nunc" email="someone-7@adventure-works.com"/>
+		<Item name="Argentiero, Luca" address="2345 Front St., San Francisco, CA 99999" city="Sit" postalcode="10072" mobile="(555) 555-0178" department="Odio" email="someone@example.com"/>
+		<Item name="Perry, Brian" address="789 22nd St NE, Miami, FL 98052" city="Vel" postalcode="10073" mobile="(111) 555-0189" department="Orci" email="user@adventure-works.com"/>
+		<Item name="Ramos, Luciana" address="4567 22nd St NE, Miami, FL 98052" city="Nam" postalcode="10074" mobile="(222) 555-0121" department="Pede" email="someone@adventure-works.com"/>
+	</SampleDataSource.Collection>
+</SampleDataSource>
