@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Threading;
 using System.ComponentModel.Composition;
 using Export.Interfaces;
@@ -20,11 +17,11 @@ namespace Export.Exporters
     [Export(typeof(IExportService))]
     public class ExportService : IExportService
     {
-        private Dispatcher _dispatcher;
+        private readonly Dispatcher _dispatcher;
         private long _jobInProgress;
         private long _completedJobs;
         private long _totalJobs;
-        private BlockingCollection<IPdfExport> _jobBuffer = new BlockingCollection<IPdfExport>();
+        private readonly BlockingCollection<IPdfExport> _jobBuffer = new BlockingCollection<IPdfExport>();
 
         /// <summary>
         /// Construct new export service with a dispatcher.

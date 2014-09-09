@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Data;
-using System.Text;
 using System.Data.OleDb;
-using System.Data.Common;
-using System.Collections.Generic;
-using System.Threading;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using Database;
 using System.Globalization;
-using System.Data.SqlClient;
 
 namespace Import
 {
@@ -28,13 +23,6 @@ namespace Import
     public class CowImport : DatabaseImporter
     {
         private IDbConnection _connection;
-
-        /// <summary>
-        /// Construct new importer for importing COW database.
-        /// </summary>
-        public CowImport()
-        {
-        }
 
         /// <summary>
         /// Get the name of this importer.
@@ -115,9 +103,8 @@ namespace Import
         {
             string firstName = reader.Get<string>("NameFirst");
             string lastName = reader.Get<string>("NameFamily");
-            Member member = container.MemberSet.AsEnumerable().
-                                        Where(m => m.firstname.Equals(firstName) &&
-                                                   m.lastname.Equals(lastName)).FirstOrDefault();
+            Member member = container.MemberSet.AsEnumerable().FirstOrDefault(m => m.firstname.Equals(firstName) &&
+                                                                                   m.lastname.Equals(lastName));
 
             // If the member doesn't exist yet
             if (member == null)

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.EntityClient;
 using System.Diagnostics;
 using System.Data.Common;
@@ -18,8 +15,8 @@ namespace Database
     public sealed class DatabaseHandler : IDisposable
     {
         private MembersContainer _database;
-        private string _path;
-        private string _password;
+        private readonly string _path;
+        private readonly string _password;
 
         /// <summary>
         /// Construct a new database handler for specified database.
@@ -50,10 +47,14 @@ namespace Database
 
         private string BuildConnectionString()
         {
-            EntityConnectionStringBuilder ee = new EntityConnectionStringBuilder();
-            ee.Provider = "System.Data.SQLite";
-            ee.Metadata = @"res://*/Members.csdl|res://*/Members.ssdl|res://*/Members.msl";
-            ee.ProviderConnectionString = String.Format(CultureInfo.CurrentCulture, "Data source=\"{0}\";Version=3;Password={1}", _path, _password);
+            var ee = new EntityConnectionStringBuilder
+                         {
+                             Provider = "System.Data.SQLite",
+                             Metadata = @"res://*/Members.csdl|res://*/Members.ssdl|res://*/Members.msl",
+                             ProviderConnectionString =
+                                 String.Format(CultureInfo.CurrentCulture, "Data source=\"{0}\";Version=3;Password={1}",
+                                               _path, _password)
+                         };
             return ee.ConnectionString;
         }
 
@@ -73,7 +74,7 @@ namespace Database
         private static void CreateDatabaseTables(string path, string password)
         {
             string connectionString = String.Format(CultureInfo.CurrentCulture, "Data source=\"{0}\";Version=3;Password={1}", path, password);
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 string[] creationStrings = DatabaseSettings.Default.CreationString.Split(';');
@@ -94,7 +95,7 @@ namespace Database
         private static bool IsDatabaseCreated(string path, string password)
         {
             string connectionString = String.Format(CultureInfo.CurrentCulture, "Data source=\"{0}\";Version=3;Password={1}", path, password);
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 using (DataTable table = connection.GetSchema("Tables"))

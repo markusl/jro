@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Database;
 
 namespace Import
@@ -9,10 +6,10 @@ namespace Import
     /// <summary>
     /// Event arguments for specified type.
     /// </summary>
-    /// <typeparam name="ArgType"></typeparam>
+    /// <typeparam name="TArgType"></typeparam>
     public class TypedEventArgs<TArgType> : EventArgs
     {
-        private TArgType m_t;
+        private readonly TArgType m_t;
         public TypedEventArgs(TArgType value)
         {
             m_t = value;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Database;
-using System.IO;
 
 namespace Export
 {
@@ -24,7 +23,7 @@ namespace Export
 
         protected override StringBuilder BuildDocument(IEnumerable<Member> members)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             Properties.Export export = global::Export.Properties.Export.Default;
 
@@ -48,10 +47,10 @@ namespace Export
 
         private static int AppendMember(StringBuilder sb, Properties.Export export, int counter, Member member)
         {
-            StringBuilder col1Builder = new StringBuilder();
+            var col1Builder = new StringBuilder();
             col1Builder.AppendFormat(export.FoFirstBlock, member.lastname + " " + member.firstname);
 
-            StringBuilder col2Builder = new StringBuilder();
+            var col2Builder = new StringBuilder();
             col2Builder.AppendFormat(export.FoBlock, member.Address.city);
 
             string foTableRow = ++counter % 2 == 0 ? export.Fo2ColumnTableOddRow : export.Fo2ColumnTableEvenRow;

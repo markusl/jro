@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Data.Objects;
 using System.Data;
-using System.Diagnostics;
 using System.Data.Objects.DataClasses;
 using System.Globalization;
 
@@ -16,7 +14,7 @@ namespace Database
     /// </summary>
     class ChangeTracker
     {
-        private MembersContainerImpl _database;
+        private readonly MembersContainerImpl _database;
         private string _date;
         private string _time;
         private ICollection<Changelog> _pendingChanges = new List<Changelog>();
@@ -52,13 +50,13 @@ namespace Database
         {
             foreach (var entry in entries)
             {
-                MemberDetais t1 = entry.Entity as MemberDetais;
+                var t1 = entry.Entity as MemberDetais;
 
                 if (ValueChangedTo(entry, "membergroup", DBConstants.ResignedMember) ||
                     ValueChangedTo(entry, "membergroup", DBConstants.InactiveMember))
                 {
                     _database.ChangelogSet.AddObject(
-                        new Changelog()
+                        new Changelog
                         {
                             date = date,
                             time = time,
@@ -74,9 +72,9 @@ namespace Database
         private static bool ValueChangedTo(ObjectStateEntry entry, string field, string value)
         {
             var props = entry.GetModifiedProperties();
-            bool modified = props.Where(prop => prop.Equals(field)).FirstOrDefault() != null;
+            bool modified = props.FirstOrDefault(prop => prop.Equals(field)) != null;
 
-            MemberDetais obj = entry.Entity as MemberDetais;
+            var obj = entry.Entity as MemberDetais;
             return modified && obj.membergroup.Equals(value);
         }
 
@@ -99,25 +97,23 @@ namespace Database
 
         void entity_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
- 	        if(e.PropertyName.Equals("Id"))
-            {
-                dynamic obj = sender;
+            if (!e.PropertyName.Equals("Id")) return;
+            dynamic obj = sender;
 
-                string action = (obj is Member ? DBConstants.NewMember : 
-                                 obj is Contact ? DBConstants.NewContact :
-                                 null);
+            string action = (obj is Member ? DBConstants.NewMember : 
+                                                                       obj is Contact ? DBConstants.NewContact :
+                                                                                                                   null);
 
-                // add to pending changes list which is then inserted when SavedChanges occurs
-                _pendingChanges.Add(
-                    Changelog.CreateChangelog(0,
-                        date: _date,
-                        time: _time,
-                        memberid: String.Format("{0}", obj.Id),
-                        action: action,
-                        oldvalue: "",
-                        newvalue: ""
+            // add to pending changes list which is then inserted when SavedChanges occurs
+            _pendingChanges.Add(
+                Changelog.CreateChangelog(0,
+                                          date: _date,
+                                          time: _time,
+                                          memberid: String.Format("{0}", obj.Id),
+                                          action: action,
+                                          oldvalue: "",
+                                          newvalue: ""
                     ));
-            }
         }
         
         void _database_SavedChanges(object sender, EventArgs e)

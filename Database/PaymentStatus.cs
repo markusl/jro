@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Database
 {
@@ -10,8 +7,8 @@ namespace Database
     /// </summary>
     public class PaymentStatus
     {
-        DateTime _paymentDate = DateTime.MinValue;
-        double _amountLeft = 0.0;
+        readonly DateTime _paymentDate = DateTime.MinValue;
+        readonly double _amountLeft = 0.0;
 
         /// <summary>
         /// Check if the member has paid the membership fee.
@@ -21,12 +18,14 @@ namespace Database
         /// <summary>
         /// How much there is left to pay.
         /// </summary>
-        public double AmountLeft { get { return _amountLeft; } private set { _amountLeft = value; } }
+        public double AmountLeft { get { return _amountLeft; }
+        }
 
         /// <summary>
         /// The date when member paid the fee, or if in the future, the due date of the bill.
         /// </summary>
-        public DateTime PaymentDate { get { return _paymentDate; } private set { _paymentDate = value; } }
+        public DateTime PaymentDate { get { return _paymentDate; }
+        }
 
         private PaymentStatus(string paymentStatus)
         {

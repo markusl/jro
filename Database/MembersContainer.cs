@@ -60,10 +60,5 @@ namespace Database
 
             return result;
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
     }
 }

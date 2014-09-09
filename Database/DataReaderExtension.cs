@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 
 namespace Database
@@ -28,12 +25,11 @@ namespace Database
         {
             if (record == null) throw new ArgumentNullException("record");
 
-            if (!record.HasColumn(column) || record[column].GetType() == typeof(DBNull))
+            if (!record.HasColumn(column) || record[column] is DBNull)
             {
                 if (typeof(T).Equals(typeof(string)))
                     return (T)(object)"";
-                else
-                    return default(T);
+                return default(T);
             }
 
             if (record[column] != DBNull.Value &&

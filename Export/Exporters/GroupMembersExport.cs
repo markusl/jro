@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Database;
-using System.IO;
-using Fonet;
-using System.Data.Objects.DataClasses;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -27,7 +24,7 @@ namespace Export
 
         protected override StringBuilder BuildDocument(IEnumerable<Member> members)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             Properties.Export export = global::Export.Properties.Export.Default;
 

@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Xml;
 using System.Linq;
-using System.Text;
-using System.Data;
-using System.Data.Common;
-using System.Threading;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using Database;
@@ -21,10 +16,6 @@ namespace Import
     {
         private XmlDocument _document;
 
-        public SampleXmlImport()
-        {
-        }
-
         public override string Name
         {
             get { return "Sample Import"; }
@@ -34,7 +25,7 @@ namespace Import
         /// Import member database from XML file.
         /// </summary>
         /// <param name="path"></param>
-        /// <param name="adapter">Table adapter for member table</param>
+        /// <param name="container">Table adapter for member table</param>
         public override void Import(string path, MembersContainer container)
         {
             if (container == null)

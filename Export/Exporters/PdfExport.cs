@@ -55,10 +55,12 @@ namespace Export
                 throw new ArgumentNullException("document");
 
             try {
-                FonetDriver driver = new FonetDriver();
-                driver.Options = new Fonet.Render.Pdf.PdfRendererOptions();
-                driver.Options.Author = OrgName;
-                driver.Options.Title = DocumentTitle;
+                var driver = new FonetDriver
+                                 {
+                                     Options =
+                                         new Fonet.Render.Pdf.PdfRendererOptions
+                                             {Author = OrgName, Title = DocumentTitle}
+                                 };
                 driver.OnInfo += driver_OnInfo;
                 string tempFile = CreateTempFile(document.ToString());
                 driver.Render(tempFile, OutputPath);

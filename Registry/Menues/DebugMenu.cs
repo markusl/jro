@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.Windows.Controls;
 using Microsoft.Win32;
 using Registry.ViewModel;
@@ -16,7 +12,7 @@ namespace Registry.Menues
     /// </summary>
     class DebugMenu
     {
-        IMainWindow _mainWindow;
+        readonly IMainWindow _mainWindow;
         [ImportingConstructor]
         public DebugMenu(IMainWindow mainWindow)
         {
@@ -28,15 +24,15 @@ namespace Registry.Menues
         {
             get
             {
-                MenuItem importExportItem = new MenuItem() { Header = "Debug" };
+                var importExportItem = new MenuItem { Header = "Debug" };
 
-                importExportItem.Items.Add(new MenuItem()
+                importExportItem.Items.Add(new MenuItem
                 {
                     Header = "Import sample database from XML",
                     Command = new RelayCommand(param => this.OnStartImport())
                 });
 
-                importExportItem.Items.Add(new MenuItem()
+                importExportItem.Items.Add(new MenuItem
                 {
                     Header = "Display debug log",
                     Command = new RelayCommand(delegate { this.DisplayDebugLog(); })
@@ -53,14 +49,13 @@ namespace Registry.Menues
 
         private void OnStartImport()
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Database files|*.mdb|All files|*.*";
+            var dialog = new OpenFileDialog {Filter = "Database files|*.mdb|All files|*.*"};
             if (dialog.ShowDialog().Value)
             {
-                ImportWindowViewModel iwvm = new ImportWindowViewModel(_mainWindow.ActiveDatabase, new Import.SampleXmlImport());
-                iwvm.ImportFileName = dialog.FileName;
+                var iwvm = new ImportWindowViewModel(_mainWindow.ActiveDatabase, new Import.SampleXmlImport())
+                               {ImportFileName = dialog.FileName};
 
-                View.ImportWindow importWindow = new View.ImportWindow();
+                var importWindow = new View.ImportWindow();
                 iwvm.RequestClose += delegate { importWindow.Close(); };
                 importWindow.DataContext = iwvm;
                 importWindow.Show();

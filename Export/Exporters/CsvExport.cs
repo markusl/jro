@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Database;
 using System.IO;
-using Fonet;
 
 namespace Export
 {
@@ -29,7 +28,7 @@ namespace Export
                     //       m.MemberDetais.membergroup.Equals("z");
                 });
 
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             foreach (var member in members)
             {
                 foreach (var contact in member.Contact)

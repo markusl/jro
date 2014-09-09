@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Threading;
 using Registry.ViewModel;
 using Database;
@@ -24,13 +21,13 @@ namespace Registry.Interfaces
         /// <summary>
         /// Displays a tab in the user interface.
         /// </summary>
-        /// <param name="vmb"></param>
+        /// <param name="tab"></param>
         void DisplayTab(ClosableViewModel tab);
 
         /// <summary>
         /// Sets active tab to the specified view model.
         /// </summary>
-        /// <param name="vmb"></param>
+        /// <param name="tab"></param>
         void SetActiveTab(ViewModelBase tab);
 
         /// <summary>

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Database;
-using System.IO;
-using Fonet;
 using System.Globalization;
 
 namespace Export
@@ -29,7 +27,7 @@ namespace Export
             if (actualMembers == null || actualMembers.Count() == 0)
                 throw new ArgumentException("", "selection");
 
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             Properties.Export export = global::Export.Properties.Export.Default;
 
@@ -52,13 +50,13 @@ namespace Export
 
         private static void AppendMember(StringBuilder sb, Properties.Export export, int counter, Member member)
         {
-            StringBuilder col1Builder = new StringBuilder();
+            var col1Builder = new StringBuilder();
             col1Builder.AppendFormat(export.FoFirstBoldBlock, member.lastname + " " + member.firstname);
             col1Builder.AppendFormat(export.FoBlock, DateTime.Parse(member.birthdate, CultureInfo.CurrentCulture).AsDate());
             col1Builder.AppendFormat(export.FoBlock, member.mobile);
             col1Builder.AppendFormat(export.FoBlock, member.email);
 
-            StringBuilder col2Builder = new StringBuilder();
+            var col2Builder = new StringBuilder();
             col2Builder.AppendFormat(export.FoFirstBlock, member.Address.address);
             col2Builder.AppendFormat(export.FoBlock, member.Address.postalcode + " " + member.Address.city);
 
