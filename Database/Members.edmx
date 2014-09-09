@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Members.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="Members.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="MembersStoreContainer">
-    <EntitySet Name="AddressSet" EntityType="Members.Store.AddressSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MemberDetaisSet" EntityType="Members.Store.MemberDetaisSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="OrganizationSet" EntityType="Members.Store.OrganizationSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ChangelogSet" EntityType="Members.Store.ChangelogSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MemberSet" EntityType="Members.Store.MemberSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ContactSet" EntityType="Members.Store.ContactSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AddressSet" EntityType="Members.Store.AddressSet" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="MemberDetaisSet" EntityType="Members.Store.MemberDetaisSet" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="OrganizationSet" EntityType="Members.Store.OrganizationSet" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ChangelogSet" EntityType="Members.Store.ChangelogSet" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="MemberSet" EntityType="Members.Store.MemberSet" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ContactSet" EntityType="Members.Store.ContactSet" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
     <AssociationSet Name="MemberAddress" Association="Members.Store.MemberAddress">
       <End Role="Member" EntitySet="MemberSet" />
       <End Role="Address" EntitySet="AddressSet" />
@@ -153,8 +153,8 @@
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Members" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-        <EntityContainer Name="MembersContainer" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="Members" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="MembersContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="AddressSet" EntityType="Members.Address" />
           <EntitySet Name="MemberDetaisSet" EntityType="Members.MemberDetais" />
           <EntitySet Name="OrganizationSet" EntityType="Members.Organization" />
@@ -176,7 +176,7 @@
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="Id" /></Key>
-          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="address" Nullable="false" />
           <Property Type="String" Name="city" Nullable="false" />
           <Property Type="String" Name="postalcode" Nullable="false" />
@@ -186,7 +186,7 @@
         <EntityType Name="MemberDetais">
           <Key>
             <PropertyRef Name="Id" /></Key>
-          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="memberno" Nullable="false" />
           <Property Type="String" Name="memberclass" Nullable="false" />
           <Property Type="String" Name="membergroup" Nullable="false" />
@@ -195,19 +195,19 @@
           <Property Type="String" Name="exitdate" Nullable="false" />
           <Property Type="String" Name="changeddate" Nullable="false" />
           <NavigationProperty Name="Member" Relationship="Members.MemberMemberDetais" FromRole="MemberDetais" ToRole="Member" />
-          <Property Type="String" Name="paymentstatus" Nullable="false" >
+          <Property Type="String" Name="paymentstatus" Nullable="false">
             <Documentation>
               <Summary>PaymentLeft</Summary></Documentation></Property></EntityType>
         <EntityType Name="Organization">
           <Key>
             <PropertyRef Name="Id" /></Key>
-          <Property Type="Int64" Name="Id" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" Nullable="false" />
+          <Property Type="Int64" Name="Id" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Type="String" Name="key" Nullable="false" />
           <Property Type="String" Name="value" Nullable="false" /></EntityType>
         <EntityType Name="Changelog">
           <Key>
             <PropertyRef Name="Id" /></Key>
-          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="action" Nullable="false" />
           <Property Type="String" Name="newvalue" Nullable="false" />
           <Property Type="String" Name="oldvalue" Nullable="false" />
@@ -217,7 +217,7 @@
         <EntityType Name="Member">
           <Key>
             <PropertyRef Name="Id" /></Key>
-          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="firstname" Nullable="false" />
           <Property Type="String" Name="lastname" Nullable="false" />
           <Property Type="String" Name="middlenames" Nullable="false" />
@@ -232,7 +232,7 @@
         <EntityType Name="Contact">
           <Key>
             <PropertyRef Name="Id" /></Key>
-          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" annotation:StoreGeneratedPattern="Identity" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="firstname" Nullable="false" />
           <Property Type="String" Name="lastname" Nullable="false" />
           <Property Type="String" Name="mobile" Nullable="false" />
@@ -256,7 +256,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MembersStoreContainer" CdmEntityContainer="MembersContainer">
     <EntitySetMapping Name="AddressSet">
       <EntityTypeMapping TypeName="IsTypeOf(Members.Address)">
@@ -369,14 +369,14 @@
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <edmx:Designer>
     <edmx:Connection>
-      <DesignerInfoPropertySet>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
     </edmx:Connection>
     <edmx:Options>
-      <DesignerInfoPropertySet>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToSQL10.tt" />
@@ -385,7 +385,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Members" ZoomLevel="83" >
+      <Diagram Name="Members" ZoomLevel="83" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <EntityTypeShape EntityType="Members.Contact" Width="1.5" PointX="4.125" PointY="1.5" Height="2.5571907552083317" />
         <AssociationConnector Association="Members.ContactAddress">
           <ConnectorPoint PointX="3.625" PointY="4.0571907552083317" />
